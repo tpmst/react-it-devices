@@ -40,43 +40,43 @@ First, clone the repository to your local machine using Git:
 ```bash
 git clone https://github.com/yourusername/it-beschaffung.git
 cd it-beschaffung
+```
+
 ### Installing Dependencies
 Navigate to the root directory of the project and install the required dependencies for both the backend and frontend:
 
-bash
-Code kopieren
+```bash
 npm install
+```
 If you are using yarn:
-
-bash
-Code kopieren
+```bash
 yarn install
-Configuring the Environment
+```
+
+### Configuring the Environment
 Create a .env file in the root directory to store your environment variables. Below is a sample configuration:
 
-bash
-Code kopieren
+```bash
 # Backend
 PORT=3000
 JWT_SECRET=your_jwt_secret_key
 
 # Frontend
 REACT_APP_API_URL=http://localhost:3000
+```
 Make sure to replace your_jwt_secret_key with a secure string.
 
-Setting Up the PDF Template
+### Setting Up the PDF Template
 The application uses JSON templates to generate PDFs. You need to place your PDF template in the appropriate directory:
 
 Navigate to the templates directory in your project:
-
-bash
-Code kopieren
+```bash
 mkdir -p templates
+```
 Create a template-betrieb.json file inside the templates directory. This file should contain the template for the PDF generation.
 
 Example template:
-
-json
+```json
 Code kopieren
 {
   "basePdf": "BLANK_PDF",
@@ -95,23 +95,22 @@ Code kopieren
     }
   ]
 }
+```
 Adjust the positions and fields according to your specific requirements.
 
-### Running the Application
-## Starting the Backend Server
+## Running the Application
+### Starting the Backend Server
 To start the backend server, run:
-
-bash
-Code kopieren
+```bash
 npm run start:server
+```
 This will start the server on http://localhost:3000.
 
-Starting the Frontend
+### Starting the Frontend
 In a separate terminal window, start the frontend:
-
-bash
-Code kopieren
+```bash
 npm run start
+```
 The frontend will be accessible at http://localhost:5173.
 
 Application Features

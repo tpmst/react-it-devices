@@ -40,7 +40,7 @@ First, clone the repository to your local machine using Git:
 ```bash
 git clone https://github.com/yourusername/it-beschaffung.git
 cd it-beschaffung
-Installing Dependencies
+### Installing Dependencies
 Navigate to the root directory of the project and install the required dependencies for both the backend and frontend:
 
 bash

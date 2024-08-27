@@ -77,7 +77,6 @@ Create a template-betrieb.json file inside the templates directory. This file sh
 
 Example template:
 ```json
-Code kopieren
 {
   "basePdf": "BLANK_PDF",
   "schemas": [
@@ -113,36 +112,42 @@ npm run start
 ```
 The frontend will be accessible at http://localhost:5173.
 
-Application Features
-CSV Viewer: View, search, and edit CSV records.
-PDF Upload: Upload signed PDF files and manage them.
-PDF Generation: Generate PDFs from CSV records using predefined templates.
-Usage
-Uploading a PDF
-Navigate to the "PDF Files" section from the dashboard.
-Click on "Upload PDF".
-Select the PDF file from your file system.
-Click "Upload". The file will be uploaded to the server, and a notification will prompt you to update the file path in the Excel sheets section.
-Viewing and Editing CSV Data
-Navigate to the "Excel-Sheet" section.
-Use the search bar to search for records by any column, such as ID or name.
-Click on a row to edit it, or click "Add Entry" to create a new record.
-Save changes, and the CSV file will be updated.
-Generating and Downloading PDFs
+## Application Features
+-**CSV Viewer:** View, search, and edit CSV records.
+-**PDF Upload:** Upload signed PDF files and manage them.
+-**PDF Generation:** Generate PDFs from CSV records using predefined templates.
+
+## Usage
+### Uploading a PDF.
+1. Navigate to the "PDF Files" section from the dashboard.
+2. Click on "Upload PDF".
+3. Select the PDF file from your file system.
+4. Click "Upload". The file will be uploaded to the server, and a notification will prompt you to update the file path in the Excel sheets section.
+
+### Viewing and Editing CSV Data
+1. Navigate to the "Excel-Sheet" section.
+2. Use the search bar to search for records by any column, such as ID or name.
+3. Click on a row to edit it, or click "Add Entry" to create a new record.
+4. Save changes, and the CSV file will be updated.
+
+### Generating and Downloading PDFs
 Ensure the CSV data is up-to-date with the correct file paths.
 The application will automatically generate PDFs when necessary, saving them in the configured directory.
 Download the generated PDFs from the "PDF Files" section.
-API Documentation
+
+## API Documentation
 The API provides endpoints for managing PDFs, CSV files, and user authentication.
 
-Endpoints
+### Endpoints
+```bash
 GET /list-files/pdf: List all available PDF files.
 GET /download/:filename: Download a specific PDF file.
 POST /upload-pdf: Upload a new PDF file.
 POST /update-csv/:filename: Update a specific row in a CSV file.
+```
 For detailed documentation, refer to the API source code comments.
 
-Troubleshooting
+## Troubleshooting
 Error: Cannot connect to the server.
 Ensure that the backend server is running and accessible on the correct port.
 PDF template not found.
@@ -154,10 +159,6 @@ Fork the repository.
 Create a new branch.
 Make your changes.
 Submit a pull request.
-License
+
+## License
 This project is licensed under the MIT License. See the LICENSE file for details.
-
-python
-Code kopieren
-
-This markdown (`README.md`) guide should help set up and run the web application. Adjust any specific details such as pat

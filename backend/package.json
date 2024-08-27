@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "@pdfme/common": "^4.3.2",
+    "@pdfme/generator": "^4.3.2",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "csv-parser": "^3.0.0",
+    "csv-writer": "^1.6.0",
+    "docx": "^8.5.0",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "pdfkit": "^0.15.0",
+    "xlsx": "^0.18.5"
+  }
+}

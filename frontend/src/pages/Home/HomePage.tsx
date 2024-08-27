@@ -24,7 +24,7 @@ const HomePage: React.FC = () => {
         {site === "xlsx" && <CSVViewer />}
       </main>
       <footer className="bg-gray-800 w-full p-4 text-white text-center">
-        © 2024 Certmedica. All rights reserved.
+        © 2024 tpmst. All rights reserved.
       </footer>
     </div>
   );

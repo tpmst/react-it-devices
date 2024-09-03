@@ -74,6 +74,7 @@ Navigate to the templates directory in your project:
 mkdir -p templates
 ```
 Create a template-betrieb.json file inside the templates directory. This file should contain the template for the PDF generation.
+You can create own Templates on https://pdfme.com/template-design.
 
 Example template:
 ```json

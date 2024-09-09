@@ -117,11 +117,14 @@ The frontend will be accessible at http://localhost:5173.
 ## Application Looks
 ### Dashboard
 ![image](https://github.com/user-attachments/assets/cd7cb62f-1fbb-44cf-9103-70089a4ccfac)
+
 ### Buying
 ![image](https://github.com/user-attachments/assets/ae59528c-9e0b-4933-9510-aeeef8734049)
+
 ### Small hardware
 ![image](https://github.com/user-attachments/assets/6e066ce2-aa8d-43e0-9f17-9053858b3ecb)
-###Printers
+
+### Printers
 ![image](https://github.com/user-attachments/assets/b6d4b1c3-712a-42a0-9fe6-baed549d6ddc)
 
 

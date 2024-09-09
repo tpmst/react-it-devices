@@ -20,7 +20,7 @@ This project is a web application designed to manage and track IT procurement pr
   - [Viewing and Editing CSV Data](#viewing-and-editing-csv-data)
   - [Generating and Downloading PDFs](#generating-and-downloading-pdfs)
 - [API Documentation](#api-documentation)
-- [Adding a Printer] (#add-printer)
+- [Adding a Printer](#add-printer)
 - [Troubleshooting](#troubleshooting)
 - [Contributing](#contributing)
 - [License](#license)

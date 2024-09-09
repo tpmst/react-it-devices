@@ -141,10 +141,7 @@ The API provides endpoints for managing PDFs, CSV files, and user authentication
 
 ### Endpoints
 ```bash
-GET /list-files/pdf: List all available PDF files.
-GET /download/:filename: Download a specific PDF file.
-POST /upload-pdf: Upload a new PDF file.
-POST /update-csv/:filename: Update a specific row in a CSV file.
+For Endpoints look into backend/routes
 ```
 For detailed documentation, refer to the API source code comments.
 

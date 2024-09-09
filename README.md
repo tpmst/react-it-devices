@@ -162,7 +162,6 @@ For Endpoints look into backend/routes
 For detailed documentation, refer to the API source code comments.
 
 ## Adding a Printer
-
 For adding a Printer take a look into a m two reposetorys for kyocera printer:
 1. https://github.com/tpmst/read-printer-tonerlevel-kyocera
 2. https://github.com/tpmst/read-printer-counts-kyocera
@@ -175,7 +174,8 @@ Error: Cannot connect to the server.
 Ensure that the backend server is running and accessible on the correct port.
 PDF template not found.
 Make sure the PDF template JSON file is correctly placed in the templates directory.
-Contributing
+
+## Contributing
 If you'd like to contribute to this project, please follow these steps:
 
 Fork the repository.

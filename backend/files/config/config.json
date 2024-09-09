@@ -1,0 +1,32 @@
+{
+  "orderedBy": [
+    "N. Pischel",
+    "T. Stiefel"
+  ],
+  "betriebsmittel": [
+    "Notebook",
+    "Tablet",
+    "Mobiltelefon",
+    "Speichergerät",
+    "Sonstige"
+  ],
+  "departments": [
+    "Buchhaltung",
+    "Callcenter",
+    "Einkauf",
+    "Geschäftsführung",
+    "IT-Abteilung",
+    "Marketing",
+    "Medizin & Kommunikation",
+    "Personal"
+  ],
+  "categories": [
+    "Hardware",
+    "Software"
+  ],
+  "conditions": [
+    "Neu",
+    "In Ordnung",
+    "beschädigt"
+  ]
+}

@@ -161,7 +161,7 @@ For Endpoints look into backend/routes
 ```
 For detailed documentation, refer to the API source code comments.
 
-## Add Printer
+## Adding a Printer
 
 For adding a Printer take a look into a m two reposetorys for kyocera printer:
 1. https://github.com/tpmst/read-printer-tonerlevel-kyocera

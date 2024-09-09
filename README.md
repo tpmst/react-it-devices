@@ -101,9 +101,9 @@ Adjust the positions and fields according to your specific requirements.
 
 ## Running the Application
 ### Starting the Backend Server
-To start the backend server, run:
+To start the backend server navigate into the backend folder and run:
 ```bash
-npm run start:server
+node app.js
 ```
 This will start the server on http://localhost:3000.
 

@@ -1,0 +1,10 @@
+ID;Antragsdatum;Abteilung;Empfänger;Bestellt von (IT);Bezeichnung des Produktes;S/N;Betriebsmittel;Zubehör;Besonderheiten/Mängel;Path
+100004;2023-11-07;Marketing;Manuel Logan;Dylan Perry;Lenovo X1 Carbon;d06f981f;Monitor;Dockingstation;keine;100004-2023-11-07-Manuel Logan-Lenovo X1 Carbon_Signed.pdf
+100005;2024-11-07;Marketing;Manuel Logan;Dylan Perry;Lenovo X1 Carbon;d06f981f;Monitor;Dockingstation;keine;100004-2023-11-07-Manuel Logan-Lenovo X1 Carbon_Signed.pdf
+100006;2024-05-20;Vertrieb;Eva Klein;Sarah Connor;HP Elite Dragonfly;02d7184b;Laptop;Dockingstation, Tasche;keine;
+100007;2024-05-22;Finanzen;Lucas Weber;Alice Grant;Microsoft Office 365;f8d9bc55;Sonstige;Lizenz für 5 PCs;Abonnement für 1 Jahr;
+100008;2024-05-30;IT-Abteilung;Sophie Neumann;John Doe;Apple MacBook Pro;e4fa3b2d;Laptop;Tasche;Druckempfindliches Touchpad;
+100009;2024-06-15;Personal;Max Mustermann;Jane Smith;Adobe Photoshop CC;d519fbf7;Sonstige;Lizenz;Monatliches Abonnement;
+100010;2024-07-10;Marketing;Anna Schmidt;Dylan Perry;Samsung Galaxy Tab S8;a9b8d4c6;Tablet;Hülle, Schutzfolie;keine;
+100011;2024-08-01;Forschung und Entwicklung;Tom Braun;Sarah Connor;Dell UltraSharp Monitor;3b6d9e2f;Monitor;HDMI Kabel;keine;
+100012;2024-08-05;Vertrieb;Eva Klein;Alice Grant;Salesforce CRM;bb5de724;Sonstige;Zugang für 10 Nutzer;Monatlicher Plan;

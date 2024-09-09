@@ -1,0 +1,11 @@
+ID;Rechnungsnummer;Artikelnummer;Menge;Gesamtbetrag;Hard/Software;Produktbezeichnung;Zustand;Bestelldatum;Bestellt von;Abteilung;Bestellt für;Investantrag;Rechnungsdatei
+100001;1;A4NNWY1;1;200;Hardware;BIZHUB C308 MINOLTA Resttoner-Behälter;In Ordnung;2024-09-02;T. Stiefel;Einkauf;Jürgen Rebscher;;
+100002;2;A4NNWY1;1;200;Hardware;BIZHUB C308 MINOLTA Resttoner-Behälter;In Ordnung;2023-08-02;T. Stiefel;Buchhaltung;Barbara Budde-Peitsch;;
+100003;3;A432JFF3;2;299.99;Hardware;Lenovo X1 Carbon;Neu;2024-08-02;T. Stiefel;Einkauf;Thomas Wiegenfeld;;
+100004;4;A4NNWY1;1;4432.43;Hardware;BIZHUB C308 MINOLTA Resttoner-Behälter;In Ordnung;2024-09-01;N. Pischel;Einkauf;Sascha Hellinger;;
+100005;5;A4NNWY1;4;399;;Laptop;Neu;2024-09-08;N. Pischel;Medizin & Kommunikation;Tom;;
+100006;8;A4NNWY1;4;399;;Laptop;Neu;2024-09-08;N. Pischel;Callcenter;Tom;;
+100007;321;1;3;5432;Hardware;Lenovo X1 Carbon;In Ordnung;2024-07-16;N. Pischel;Geschäftsführung;Test;;
+100008;321;1;3;5432;Hardware;Lenovo X1 Carbon;In Ordnung;2024-05-21;N. Pischel;IT-Abteilung;Test;;
+100009;321;1;3;5432;Hardware;Lenovo X1 Carbon;In Ordnung;2024-04-16;N. Pischel;Personal;Test;;
+100008;321;1;3;5432;Hardware;Lenovo X1 Carbon;In Ordnung;2024-03-21;N. Pischel;Marketing;Test;;

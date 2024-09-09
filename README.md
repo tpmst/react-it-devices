@@ -20,6 +20,7 @@ This project is a web application designed to manage and track IT procurement pr
   - [Viewing and Editing CSV Data](#viewing-and-editing-csv-data)
   - [Generating and Downloading PDFs](#generating-and-downloading-pdfs)
 - [API Documentation](#api-documentation)
+- [Adding a Printer] (#add-printer)
 - [Troubleshooting](#troubleshooting)
 - [Contributing](#contributing)
 - [License](#license)
@@ -159,6 +160,15 @@ The API provides endpoints for managing PDFs, CSV files, and user authentication
 For Endpoints look into backend/routes
 ```
 For detailed documentation, refer to the API source code comments.
+
+## Add Printer
+
+For adding a Printer take a look into a m two reposetorys for kyocera printer:
+1. https://github.com/tpmst/read-printer-tonerlevel-kyocera
+2. https://github.com/tpmst/read-printer-counts-kyocera
+
+If you dont have koycera printers you can either delete this tap or try to get the SNMP-OIDs for your printers.
+
 
 ## Troubleshooting
 Error: Cannot connect to the server.

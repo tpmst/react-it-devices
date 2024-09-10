@@ -39,7 +39,7 @@ const HomePage: React.FC = () => {
         </main>
       </SettingsProvider>
       <footer className="bg-[#eceadb] dark:bg-[#1e293b] w-full p-4 dark:text-white text-center">
-        © 2024 Certmedica. All rights reserved.
+        © 2024 tpmst. All rights reserved.
       </footer>
     </div>
   );

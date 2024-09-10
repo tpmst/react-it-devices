@@ -134,9 +134,9 @@ The frontend will be accessible at http://localhost:5173.
 
 
 ## Application Features
--**CSV Viewer:** View, search, and edit CSV records.
--**PDF Upload:** Upload signed PDF files and manage them.
--**PDF Generation:** Generate PDFs from CSV records using predefined templates.
+ -**CSV Viewer:** View, search, and edit CSV records.
+ -**PDF Upload:** Upload signed PDF files and manage them.
+ -**PDF Generation:** Generate PDFs from CSV records using predefined templates.
 
 ## Usage
 ### Uploading a PDF.

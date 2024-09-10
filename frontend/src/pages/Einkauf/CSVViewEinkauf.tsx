@@ -177,14 +177,14 @@ const CSVViewEinkauf: React.FC = () => {
       </div>
 
       {/* Table with scroll and highlight */}
-      <div className="overflow-auto bg-white h-[80vh] w-full border border-gray-300 dark:bg-[#1e293b]">
-        <table className="min-w-full bg-white dark:bg-[#1e293b]">
+      <div className="overflow-auto bg-[#e9e7d8] h-[80vh] w-full border border-gray-300 dark:bg-[#1e293b]">
+        <table className="min-w-full bg-[#e9e7d8] dark:bg-[#1e293b]">
           <thead>
             <tr>
               {data[0]?.map((col, index) => (
                 <th
                   key={index}
-                  className="px-4 py-2 bg-gray-200 border sticky top-0 dark:text-gray-100 dark:bg-gray-700"
+                  className="px-4 py-2 bg-[#cccabc] border sticky top-0 dark:text-gray-100 dark:bg-gray-700"
                 >
                   {col}
                 </th>
@@ -201,7 +201,7 @@ const CSVViewEinkauf: React.FC = () => {
                 {row.map((cell, cellIndex) => (
                   <td
                     key={cellIndex}
-                    className={`px-4 py-2 border bg-white text-black dark:bg-gray-600 dark:text-gray-100`}
+                    className={`px-4 py-2 border bg-[#e9e7d8] hover:bg-[#d1cfc1] text-black dark:bg-gray-600 dark:hover:bg-gray-700 dark:text-gray-100`}
                   >
                     {cell}
                   </td>

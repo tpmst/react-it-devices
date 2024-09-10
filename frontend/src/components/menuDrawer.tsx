@@ -18,6 +18,7 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import DrawerCard from "./drawer/drawerCard";
 import clsx from "clsx"; // for conditional class joining
+import { useTheme } from "../context/themeContext";
 
 interface MenuDrawerProps {
   setSite: (site: string) => void;
@@ -25,6 +26,10 @@ interface MenuDrawerProps {
 
 export default function MenuDrawer({ setSite }: MenuDrawerProps) {
   const [isExpanded, setIsExpanded] = React.useState(true);
+  const { theme } = useTheme(); // Get the current theme from the ThemeProvider
+
+  const textColor = theme === "light" ? "#444444" : "#ffffff";
+  const bg = theme === "light" ? "#eceadb" : "#1e293b";
 
   const handleMenuClick = (site: string) => {
     setSite(site);
@@ -62,8 +67,8 @@ export default function MenuDrawer({ setSite }: MenuDrawerProps) {
             width: isExpanded ? 250 : 90, // Adjust the drawer paper width
             boxSizing: "border-box",
             transition: "width 0.3s", // Smooth width transition
-            backgroundColor: "#1e293b", // Dark background
-            color: "#000000", // Text color
+            backgroundColor: bg, // Dark background
+            color: textColor, // Text color
             overflowX: "hidden", // Prevent horizontal overflow
           },
         }}
@@ -74,7 +79,7 @@ export default function MenuDrawer({ setSite }: MenuDrawerProps) {
             <div className="max-h-[20px]">
               <h1
                 className={clsx(
-                  "text-white text-2xl",
+                  "text-black text-2xl dark:text-white",
                   isExpanded ? "block" : "hidden"
                 )}
               >
@@ -84,158 +89,195 @@ export default function MenuDrawer({ setSite }: MenuDrawerProps) {
             {/* Collapse/Expand Button */}
             <IconButton onClick={toggleDrawerExpand}>
               {isExpanded ? (
-                <ArrowBackIos className="text-white" />
+                <ArrowBackIos
+                  sx={{
+                    color: textColor,
+                  }}
+                />
               ) : (
-                <ArrowForwardIos className="text-white" />
+                <ArrowForwardIos
+                  sx={{
+                    color: textColor,
+                  }}
+                />
               )}
             </IconButton>
           </div>
-          <Divider />
           {/* Drawer list items */}
-          <List>
-            <DrawerCard>
-              <ListItem disablePadding>
-                <ListItemButton
-                  onClick={() => handleMenuClick("dashboard")}
-                  sx={{ height: 40, padding: 1, paddingLeft: 2 }}
-                >
-                  <ListItemIcon>
-                    <DashboardIcon sx={{ color: "#000000" }} />
-                  </ListItemIcon>
-                  {isExpanded && (
-                    <ListItemText
-                      primary="Dashboard"
-                      sx={{
-                        color: "#000000",
-                        height: 16,
-                        alignItems: "center",
-                        justifyItems: "center",
-                        paddingBottom: 3,
-                      }}
-                    />
-                  )}
-                </ListItemButton>
-              </ListItem>
-            </DrawerCard>
-            <div className="m-2">
-              <Divider className="bg-gray-300" />
+          <div className="flex flex-col h-full">
+            <div className="mt-auto">
+              <List>
+                <DrawerCard>
+                  <ListItem disablePadding>
+                    <ListItemButton
+                      onClick={() => handleMenuClick("dashboard")}
+                      sx={{ height: 40, padding: 1, paddingLeft: 2 }}
+                    >
+                      <ListItemIcon>
+                        <DashboardIcon
+                          sx={{
+                            color: textColor,
+                          }}
+                        />
+                      </ListItemIcon>
+                      {isExpanded && (
+                        <ListItemText
+                          primary="Dashboard"
+                          sx={{
+                            color: textColor,
+                            height: 16,
+                            alignItems: "center",
+                            justifyItems: "center",
+                            paddingBottom: 3,
+                          }}
+                        />
+                      )}
+                    </ListItemButton>
+                  </ListItem>
+                </DrawerCard>
+                <div className="m-2"></div>
+                <DrawerCard>
+                  <ListItem disablePadding>
+                    <ListItemButton
+                      onClick={() => handleMenuClick("einkauf")}
+                      sx={{ height: 40, padding: 1, paddingLeft: 2 }}
+                    >
+                      <ListItemIcon>
+                        <ShoppingCartIcon
+                          sx={{
+                            color: textColor,
+                          }}
+                        />
+                      </ListItemIcon>
+                      {isExpanded && (
+                        <ListItemText
+                          primary="Einkauf"
+                          sx={{
+                            color: textColor,
+                            height: 16,
+                            alignItems: "center",
+                            justifyItems: "center",
+                            paddingBottom: 3,
+                          }}
+                        />
+                      )}
+                    </ListItemButton>
+                  </ListItem>
+                </DrawerCard>
+                <div className="m-2"></div>
+                {/* More List Items */}
+                <DrawerCard>
+                  <ListItem disablePadding>
+                    <ListItemButton
+                      onClick={() => handleMenuClick("xlsx")}
+                      sx={{ height: 40, padding: 1, paddingLeft: 2 }}
+                    >
+                      <ListItemIcon>
+                        <TableChartIcon
+                          sx={{
+                            color: textColor,
+                          }}
+                        />
+                      </ListItemIcon>
+                      {isExpanded && (
+                        <ListItemText
+                          primary="Excel-Sheet"
+                          sx={{
+                            color: textColor,
+                            height: 16,
+                            alignItems: "center",
+                            justifyItems: "center",
+                            paddingBottom: 3,
+                          }}
+                        />
+                      )}
+                    </ListItemButton>
+                  </ListItem>
+                </DrawerCard>
+                <div className="m-2"></div>
+                <DrawerCard>
+                  <ListItem disablePadding>
+                    <ListItemButton
+                      onClick={() => handleMenuClick("pdf")}
+                      sx={{ height: 40, padding: 1, paddingLeft: 2 }}
+                    >
+                      <ListItemIcon>
+                        <DescriptionIcon
+                          sx={{
+                            color: textColor,
+                          }}
+                        />
+                      </ListItemIcon>
+                      {isExpanded && (
+                        <ListItemText
+                          primary="PDF-Files"
+                          sx={{
+                            color: textColor,
+                            height: 16,
+                            alignItems: "center",
+                            justifyItems: "center",
+                            paddingBottom: 3,
+                          }}
+                        />
+                      )}
+                    </ListItemButton>
+                  </ListItem>
+                </DrawerCard>
+                <div className="m-2"></div>
+                <DrawerCard>
+                  <ListItem disablePadding>
+                    <ListItemButton
+                      onClick={() => handleMenuClick("tabelle")}
+                      sx={{ height: 40, padding: 1, paddingLeft: 2 }}
+                    >
+                      <ListItemIcon>
+                        <MouseIcon
+                          sx={{
+                            color: textColor,
+                          }}
+                        />
+                      </ListItemIcon>
+                      {isExpanded && (
+                        <ListItemText
+                          primary="Tabelle"
+                          sx={{ color: textColor }}
+                        />
+                      )}
+                    </ListItemButton>
+                  </ListItem>
+                </DrawerCard>
+                <div className="m-2"></div>
+                <DrawerCard>
+                  <ListItem disablePadding>
+                    <ListItemButton
+                      onClick={() => handleMenuClick("drucker")}
+                      sx={{ height: 40, padding: 1, paddingLeft: 2 }}
+                    >
+                      <ListItemIcon>
+                        <PrintIcon
+                          sx={{
+                            color: textColor,
+                          }}
+                        />
+                      </ListItemIcon>
+                      {isExpanded && (
+                        <ListItemText
+                          primary="Drucker"
+                          sx={{ color: textColor }}
+                        />
+                      )}
+                    </ListItemButton>
+                  </ListItem>
+                </DrawerCard>
+                {/* Settings Item at the Bottom */}
+              </List>
             </div>
-            <DrawerCard>
-              <ListItem disablePadding>
-                <ListItemButton
-                  onClick={() => handleMenuClick("einkauf")}
-                  sx={{ height: 40, padding: 1, paddingLeft: 2 }}
-                >
-                  <ListItemIcon>
-                    <ShoppingCartIcon sx={{ color: "#000000" }} />
-                  </ListItemIcon>
-                  {isExpanded && (
-                    <ListItemText
-                      primary="Einkauf"
-                      sx={{
-                        color: "#000000",
-                        height: 16,
-                        alignItems: "center",
-                        justifyItems: "center",
-                        paddingBottom: 3,
-                      }}
-                    />
-                  )}
-                </ListItemButton>
-              </ListItem>
-            </DrawerCard>
-            <div className="m-2">
-              <Divider className="bg-gray-300" />
-            </div>
-            {/* More List Items */}
-            <DrawerCard>
-              <ListItem disablePadding>
-                <ListItemButton
-                  onClick={() => handleMenuClick("xlsx")}
-                  sx={{ height: 40, padding: 1, paddingLeft: 2 }}
-                >
-                  <ListItemIcon>
-                    <TableChartIcon sx={{ color: "#000000" }} />
-                  </ListItemIcon>
-                  {isExpanded && (
-                    <ListItemText
-                      primary="Excel-Sheet"
-                      sx={{
-                        color: "#000000",
-                        height: 16,
-                        alignItems: "center",
-                        justifyItems: "center",
-                        paddingBottom: 3,
-                      }}
-                    />
-                  )}
-                </ListItemButton>
-              </ListItem>
-            </DrawerCard>
+            <div className="mt-auto"></div>
+          </div>
 
-            <DrawerCard>
-              <ListItem disablePadding>
-                <ListItemButton
-                  onClick={() => handleMenuClick("pdf")}
-                  sx={{ height: 40, padding: 1, paddingLeft: 2 }}
-                >
-                  <ListItemIcon>
-                    <DescriptionIcon sx={{ color: "#000000" }} />
-                  </ListItemIcon>
-                  {isExpanded && (
-                    <ListItemText
-                      primary="PDF-Files"
-                      sx={{
-                        color: "#000000",
-                        height: 16,
-                        alignItems: "center",
-                        justifyItems: "center",
-                        paddingBottom: 3,
-                      }}
-                    />
-                  )}
-                </ListItemButton>
-              </ListItem>
-            </DrawerCard>
-            <div className="m-2">
-              <Divider className="bg-gray-300" />
-            </div>
-            <DrawerCard>
-              <ListItem disablePadding>
-                <ListItemButton
-                  onClick={() => handleMenuClick("tabelle")}
-                  sx={{ height: 40, padding: 1, paddingLeft: 2 }}
-                >
-                  <ListItemIcon>
-                    <MouseIcon sx={{ color: "#000000" }} />
-                  </ListItemIcon>
-                  {isExpanded && (
-                    <ListItemText primary="Tabelle" sx={{ color: "#000000" }} />
-                  )}
-                </ListItemButton>
-              </ListItem>
-            </DrawerCard>
-            <div className="m-2">
-              <Divider className="bg-gray-300" />
-            </div>
-            <DrawerCard>
-              <ListItem disablePadding>
-                <ListItemButton
-                  onClick={() => handleMenuClick("drucker")}
-                  sx={{ height: 40, padding: 1, paddingLeft: 2 }}
-                >
-                  <ListItemIcon>
-                    <PrintIcon sx={{ color: "#000000" }} />
-                  </ListItemIcon>
-                  {isExpanded && (
-                    <ListItemText primary="Drucker" sx={{ color: "#000000" }} />
-                  )}
-                </ListItemButton>
-              </ListItem>
-            </DrawerCard>
-            <Divider />
-            {/* Settings Item at the Bottom */}
-          </List>
+          <div className="mr-3 ml-3">
+            <Divider className="bg-gray-300"></Divider>
+          </div>
 
           <div className="mt-auto mb-4">
             <List>
@@ -246,13 +288,17 @@ export default function MenuDrawer({ setSite }: MenuDrawerProps) {
                     sx={{ height: 40, padding: 1, paddingLeft: 2 }}
                   >
                     <ListItemIcon>
-                      <SettingsIcon sx={{ color: "#000000" }} />
+                      <SettingsIcon
+                        sx={{
+                          color: textColor,
+                        }}
+                      />
                     </ListItemIcon>
                     {isExpanded && (
                       <ListItemText
                         primary="Einstellungen"
                         sx={{
-                          color: "#000000",
+                          color: textColor,
                           height: 16,
                           alignItems: "center",
                           justifyItems: "center",

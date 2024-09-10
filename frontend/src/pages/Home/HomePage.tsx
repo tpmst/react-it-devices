@@ -16,8 +16,8 @@ const HomePage: React.FC = () => {
   useEffect(() => {});
 
   return (
-    <div className="min-h-screen dark:bg-[#0d1117] flex flex-col items-center justify-center">
-      <header className="bg-[#1e293b] flex w-full p-4 text-2xl font-bold items-center">
+    <div className="min-h-screen bg-[#f5f4eb] dark:bg-[#0d1117] flex flex-col items-center justify-center">
+      <header className="bg-[#eceadb] dark:bg-[#1e293b] flex w-full p-4 text-2xl font-bold items-center">
         <div className="flex-start">
           <MenuDrawer setSite={setSite} />
         </div>
@@ -38,8 +38,8 @@ const HomePage: React.FC = () => {
           {site === "settings" && <SettingsLayout />}
         </main>
       </SettingsProvider>
-      <footer className="bg-gray-800 w-full p-4 text-white text-center">
-        © 2024 tpmst. All rights reserved.
+      <footer className="bg-[#eceadb] dark:bg-[#1e293b] w-full p-4 dark:text-white text-center">
+        © 2024 Certmedica. All rights reserved.
       </footer>
     </div>
   );

@@ -14,7 +14,7 @@ const DashboardCard: React.FC<DashboardCardProps> = ({
   percentage,
 }) => {
   return (
-    <div className="bg-white border text-black rounded-lg p-6 shadow-md dark:bg-[#1e293b] dark:text-white">
+    <div className="bg-[#e9e7d8] border text-black rounded-lg p-6 shadow-md dark:bg-[#1e293b] dark:text-white">
       {/* Title and Icon */}
       <div className="flex justify-between items-center">
         <p className="text-sm text-gray-800 dark:text-gray-400">{title}</p>

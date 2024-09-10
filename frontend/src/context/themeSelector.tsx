@@ -9,7 +9,7 @@ const ThemeSelector: React.FC = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="px-4 py-2 bg-[#1e293b] text-white rounded hover:text-gray-300 flex items-center"
+      className="px-4 py-2 bg-transparent text-[#444444] rounded flex items-center hover:bg-[#dfddcd] dark:hover:bg-[#2a3a53] dark:text-white"
     >
       {theme === "light" ? (
         <DarkMode className="" />

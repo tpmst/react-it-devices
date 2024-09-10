@@ -62,19 +62,19 @@ const Zaelerstaende = () => {
       <table className="min-w-full bg-white border border-gray-300 dark:bg-[#1e293b]">
         <thead>
           <tr>
-            <th className="px-4 py-2 border bg-gray-300 text-black dark:text-gray-100 dark:bg-gray-700">
+            <th className="px-4 py-2 bg-[#cccabc] text-black border sticky top-0 dark:text-gray-100 dark:bg-gray-700">
               {t("table.name")}
             </th>
-            <th className="px-4 py-2 border bg-gray-300 text-black dark:text-gray-100 dark:bg-gray-700">
+            <th className="px-4 py-2 bg-[#cccabc] text-black border sticky top-0 dark:text-gray-100 dark:bg-gray-700">
               {t("table.ipAddress")}
             </th>
-            <th className="px-4 py-2 border bg-gray-300 text-black dark:text-gray-100 dark:bg-gray-700">
+            <th className="px-4 py-2 bg-[#cccabc] text-black border sticky top-0 dark:text-gray-100 dark:bg-gray-700">
               {t("table.printsBlackWhite")}
             </th>
-            <th className="px-4 py-2 border bg-gray-300 text-black dark:text-gray-100 dark:bg-gray-700">
+            <th className="px-4 py-2 bg-[#cccabc] text-black border sticky top-0 dark:text-gray-100 dark:bg-gray-700">
               {t("table.printsColor")}
             </th>
-            <th className="px-4 py-2 border bg-gray-300 text-black dark:text-gray-100 dark:bg-gray-700">
+            <th className="px-4 py-2 bg-[#cccabc] text-black border sticky top-0 dark:text-gray-100 dark:bg-gray-700">
               {t("table.status")}
             </th>
           </tr>
@@ -82,20 +82,20 @@ const Zaelerstaende = () => {
         <tbody>
           {data.map((device, index) => (
             <tr key={index}>
-              <td className="px-4 text-black dark:text-gray-100 py-2 border">
+              <td className="px-4 py-2 border bg-[#e9e7d8]  text-black dark:bg-gray-600  dark:text-gray-100">
                 {device.Name}
               </td>
-              <td className="px-4 text-black dark:text-gray-100 py-2 border">
+              <td className="px-4 py-2 border bg-[#e9e7d8]  text-black dark:bg-gray-600  dark:text-gray-100">
                 {device.IP}
               </td>
-              <td className="px-4 text-black dark:text-gray-100 py-2 border">
+              <td className="px-4 py-2 border bg-[#e9e7d8]  text-black dark:bg-gray-600  dark:text-gray-100">
                 {device.PrintsBlackWhite}
               </td>
-              <td className="px-4 text-black dark:text-gray-100 py-2 border">
+              <td className="px-4 py-2 border bg-[#e9e7d8]  text-black dark:bg-gray-600  dark:text-gray-100">
                 {device.PrintsColor}
               </td>
               <td
-                className={`px-4 py-2 border ${
+                className={`px-4 py-2 border bg-[#e9e7d8] dark:bg-gray-600  ${
                   device.Status === "Online" ? "text-green-600" : "text-red-600"
                 }`}
               >

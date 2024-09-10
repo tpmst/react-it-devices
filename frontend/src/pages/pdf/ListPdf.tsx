@@ -170,7 +170,7 @@ const ListPDF: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center justify-center p-4 dark:bg-[#0d1117]">
+    <div className="min-h-screen bg-[#f5f4ec] flex flex-col items-center justify-center p-4 dark:bg-[#0d1117]">
       <h1 className="text-2xl text-black font-bold mb-4 dark:text-gray-100">
         Available Files
       </h1>

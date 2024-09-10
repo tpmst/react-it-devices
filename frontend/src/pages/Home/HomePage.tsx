@@ -16,7 +16,7 @@ const HomePage: React.FC = () => {
   useEffect(() => {});
 
   return (
-    <div className="min-h-screen bg-[#f5f4eb] dark:bg-[#0d1117] flex flex-col items-center justify-center">
+    <div className="min-h-screen bg-[#f5f4eb] dark:bg-[#1c242c] flex flex-col items-center justify-center">
       <header className="bg-[#eceadb] dark:bg-[#1e293b] flex w-full p-4 text-2xl font-bold items-center">
         <div className="flex-start">
           <MenuDrawer setSite={setSite} />

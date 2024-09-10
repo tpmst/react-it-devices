@@ -19,6 +19,7 @@ This project is a web application designed to manage and track IT procurement pr
   - [Uploading a PDF](#uploading-a-pdf)
   - [Viewing and Editing CSV Data](#viewing-and-editing-csv-data)
   - [Generating and Downloading PDFs](#generating-and-downloading-pdfs)
+  - [Languages](#language)
 - [API Documentation](#api-documentation)
 - [Adding a Printer](#add-printer)
 - [Troubleshooting](#troubleshooting)
@@ -151,6 +152,9 @@ The frontend will be accessible at http://localhost:5173.
 Ensure the CSV data is up-to-date with the correct file paths.
 The application will automatically generate PDFs when necessary, saving them in the configured directory.
 Download the generated PDFs from the "PDF Files" section.
+
+### Language
+There is a locals folder where you can take the en/translation.json and translate it into your Language. But in some cases the Language is depending on the CSV-Files you have in your backend, so you maby need to change some parts of the code for example in the EditModals for the tabels.
 
 ## API Documentation
 The API provides endpoints for managing PDFs, CSV files, and user authentication.

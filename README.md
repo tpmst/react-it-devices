@@ -118,7 +118,7 @@ The frontend will be accessible at http://localhost:5173.
 
 ## Application Looks
 ### Dashboard(german in dark-mode)
-![image](https://github.com/user-attachments/assets/cd7cb62f-1fbb-44cf-9103-70089a4ccfac)
+![image](https://github.com/user-attachments/assets/03529b12-4644-4030-85b7-86c1c8afb13b)
 
 ### Dashboard(english in light-mode)
 ![image](https://github.com/user-attachments/assets/f6a2dc12-cf2d-47d4-988c-f6c23b592ebd)

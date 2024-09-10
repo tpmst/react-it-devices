@@ -1,0 +1,71 @@
+{
+    "dashboard": {
+      "totalSpending": "Total Spending",
+      "thisYearSpending": "Spending this Year",
+      "thisMonthSpending": "Spending this Month",
+      "hardwareThisYear": "Hardware Given Out this Year",
+      "comparedToLastYear": "compared to last year",
+      "comparedToLastMonth": "compared to last month",
+      "counterLevels": "Counter Levels",
+    "tonerLevels": "Toner Levels"
+    },
+    "error": {
+    "noToken": "No token found, please log in.",
+    "fetchCSV": "Error fetching CSV file:",
+    "general": "Error"
+  },
+  "status": {
+    "loading": "Loading",
+    "printerOffline": "The selected printer is offline"
+  },
+  "charts": {
+    "totalHardwareSoftware": "Total Spending for Hardware/Software",
+    "monthlySpending": "Monthly Spending",
+    "departmentTotalSpending": "Total Spending by Department",
+    "departmentHardwareGivenOut": "Hardware Given Out by Department",
+    "top20UsersWithMostHardware": "Top 20 Users with the Most Issued Hardware"
+  },
+  "tonerLevels": {
+    "black": "Black",
+    "cyan": "Cyan",
+    "magenta": "Magenta",
+    "yellow": "Yellow"
+  },
+  "labels": {
+    "selectYear": "Select Year",
+    "selectPrinter": "Select Printer"
+  },
+  "categories": {
+    "hardware": "Hardware",
+    "software": "Software"
+  },
+  "months": {
+    "january": "January",
+    "february": "February",
+    "march": "March",
+    "april": "April",
+    "may": "May",
+    "june": "June",
+    "july": "July",
+    "august": "August",
+    "september": "September",
+    "october": "October",
+    "november": "November",
+    "december": "December"
+  },
+  "totals": {
+    "hardwarePrice": "Total Hardware Price",
+    "softwarePrice": "Total Software Price"
+  },
+  "table": {
+    "name": "Name",
+    "ipAddress": "IP Address",
+    "printsBlackWhite": "Prints Black & White",
+    "printsColor": "Prints Color",
+    "status": "Status"
+  },
+  "settings": {
+    "title": "Settings"
+  }
+  }
+  

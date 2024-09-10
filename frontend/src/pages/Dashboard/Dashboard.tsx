@@ -8,8 +8,11 @@ import DashboardCard from "../../components/dashboard/dashboardCard";
 import { API_BASE_URL } from "../../security/config";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useTranslation } from "react-i18next"; // Import translation hook
 
 const Dashboard = () => {
+  const { t } = useTranslation(); // Use the `useTranslation` hook
+
   const [totalHardwarePrice, setTotalHardwarePrice] = useState<number>(0); // Total hardware price
   const [percntageLastMonth, setPercntageLastMonth] = useState<string>("");
   const [PriceLastMonth, setPriceLastMonth] = useState<number>(0);
@@ -17,9 +20,8 @@ const Dashboard = () => {
   const [krimskramsLastYear, setKrimskramsLastYear] = useState<string>("");
   const [PriceLastYear, setPriceLastYear] = useState<number>(0);
   const [authToken, setAuthToken] = useState<string | null>(null); // Authentication token
-  // Effect hook to fetch CSV data on component mount or when selectedYear changes
+
   useEffect(() => {
-    // Get the authentication token from local storage
     const token = localStorage.getItem("token");
     if (token) {
       setAuthToken(token); // Set token in state
@@ -27,7 +29,6 @@ const Dashboard = () => {
       return;
     }
 
-    // Function to fetch the CSV file from the server
     const fetchCSVFile = async () => {
       try {
         const response = await axios.get(
@@ -65,7 +66,6 @@ const Dashboard = () => {
     fetchCSVFile(); // Call the function to fetch CSV data
   }, [authToken]); // Re-run the effect if authToken or selectedYear changes
 
-  // Function to parse CSV data into a 2D array of strings
   const parseCSV = (text: string): string[][] => {
     const rows = text.split("\n").map((row) => row.split(";"));
     return rows;
@@ -85,13 +85,9 @@ const Dashboard = () => {
       }
     });
 
-    // Ausgabe des Ergebnisses in lesbarer Form
-    console.log(JSON.stringify(userHardwareCount, null, 2));
-
     setKrimskramsLastYear(`${userHardwareCount}`);
   };
 
-  // Function to calculate total prices for hardware and software
   const calculateTotalPrices = (data: string[][]) => {
     let Total = 0;
 
@@ -117,7 +113,6 @@ const Dashboard = () => {
       const date = row[8]?.trim(); // Assuming "Antragsdatum" is in column index 8
       const price = parseFloat(row[4]?.replace(",", ".").trim()); // Assuming "Preis" is in column index 4
 
-      // Ensure both date and price are valid
       if (date && !isNaN(price)) {
         const [yearPart] = date.split("-"); // Assuming "YYYY-MM-DD" format
         const year = parseInt(yearPart, 10);
@@ -130,71 +125,68 @@ const Dashboard = () => {
       }
     });
 
-    // Calculate percentage change (handle division by zero)
     let percentageChange = 0;
     if (lastYearSpending !== 0) {
       percentageChange =
         ((currentYearSpending - lastYearSpending) / lastYearSpending) * 100;
     } else if (currentYearSpending > 0) {
-      percentageChange = 100; // If last year was 0 and this year is positive
-    }
-    // Set the formatted percentage string
-    if (percentageChange <= 0) {
-      setPercntageLastYear(`-${percentageChange.toFixed(2)}% zum letzten Jahr`);
-    } else {
-      setPercntageLastYear(`+${percentageChange.toFixed(2)}% zum letzten Jahr`);
+      percentageChange = 100;
     }
 
-    // Update the state with the yearly spending data
+    if (percentageChange <= 0) {
+      setPercntageLastYear(
+        `-${percentageChange.toFixed(2)}% ${t("dashboard.comparedToLastYear")}`
+      );
+    } else {
+      setPercntageLastYear(
+        `+${percentageChange.toFixed(2)}% ${t("dashboard.comparedToLastYear")}`
+      );
+    }
+
     setPriceLastYear(currentYearSpending);
   };
 
-  // Function to calculate monthly spending for a given year
   const calculateMonthlySpending = (data: string[][]) => {
     const currentYear = new Date().getFullYear();
-    const monthlySpending = Array(12).fill(0); // Initialize monthly spending array
+    const monthlySpending = Array(12).fill(0);
 
     data.slice(1).forEach((row) => {
       const date = row[8]?.trim(); // Assuming "Antragsdatum" is in column index 8
       const price = parseFloat(row[4]?.replace(",", ".").trim()); // Assuming "Preis" is in column index 4
 
-      // Ensure both date and price are valid
       if (date && !isNaN(price)) {
-        const [yearPart, monthPart] = date.split("-"); // Assuming "YYYY-MM-DD" format
+        const [yearPart, monthPart] = date.split("-");
         if (parseInt(yearPart, 10) === currentYear) {
-          const month = parseInt(monthPart, 10) - 1; // Convert month to 0-based index
+          const month = parseInt(monthPart, 10) - 1;
           if (month >= 0 && month < 12) {
-            // Ensure valid month index
-            monthlySpending[month] += price; // Add price to the corresponding month
+            monthlySpending[month] += price;
           }
         }
       }
     });
 
-    // Get the current month and previous month spending
-    const currentMonth = new Date().getMonth(); // 0-based index for the current month
-    const lastMonth = currentMonth === 0 ? 11 : currentMonth - 1; // Handle wrap-around for January
+    const currentMonth = new Date().getMonth();
+    const lastMonth = currentMonth === 0 ? 11 : currentMonth - 1;
 
     const currentMonthSpending = monthlySpending[currentMonth];
     const lastMonthSpending = monthlySpending[lastMonth];
 
-    // Calculate the percentage change (handle division by zero)
     let percentageChange = 0;
     if (lastMonthSpending !== 0) {
       percentageChange =
         ((currentMonthSpending - lastMonthSpending) / lastMonthSpending) * 100;
     } else if (currentMonthSpending > 0) {
-      percentageChange = 100; // If last month was 0 and this month is positive
+      percentageChange = 100;
     }
-    // Return spending and percentage change
+
     if (percentageChange <= 0) {
-      let newString1 =
-        "-" + percentageChange.toFixed(2) + "% zum letzten Monat";
-      setPercntageLastMonth(newString1);
+      setPercntageLastMonth(
+        `-${percentageChange.toFixed(2)}% ${t("dashboard.comparedToLastMonth")}`
+      );
     } else {
-      let newString2 =
-        "+" + percentageChange.toFixed(2) + "% zum letzten Monat";
-      setPercntageLastMonth(newString2);
+      setPercntageLastMonth(
+        `+${percentageChange.toFixed(2)}% ${t("dashboard.comparedToLastMonth")}`
+      );
     }
 
     setPriceLastMonth(currentMonthSpending);
@@ -202,38 +194,35 @@ const Dashboard = () => {
 
   return (
     <div className="p-6 bg-white dark:bg-[#11151a]">
-      {/* Cards Section */}
       <Grid container spacing={4}>
-        {/* Render four cards in a row */}
         <Grid item xs={12} md={6} lg={3}>
           <DashboardCard
-            title="Gesamtausgaben"
+            title={t("dashboard.totalSpending")}
             value={`${totalHardwarePrice}€`}
           />
         </Grid>
         <Grid item xs={12} md={6} lg={3}>
           <DashboardCard
-            title="Ausgaben dieses Jahr"
+            title={t("dashboard.thisYearSpending")}
             value={`${PriceLastYear}€`}
             percentage={percntageLastYear}
           />
         </Grid>
         <Grid item xs={12} md={6} lg={3}>
           <DashboardCard
-            title="Ausgaben in diesem Monat"
+            title={t("dashboard.thisMonthSpending")}
             value={`${PriceLastMonth}€`}
             percentage={percntageLastMonth}
           />
         </Grid>
         <Grid item xs={12} md={6} lg={3}>
           <DashboardCard
-            title="Herausgegebene Kleingeräte dieses Jahr"
+            title={t("dashboard.hardwareThisYear")}
             value={krimskramsLastYear}
           />
         </Grid>
       </Grid>
 
-      {/* Charts Section */}
       <List>
         <ListItem>
           <GraphBestand />

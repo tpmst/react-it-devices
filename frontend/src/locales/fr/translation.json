@@ -1,0 +1,71 @@
+{
+    "dashboard": {
+      "totalSpending": "Dépenses totales",
+      "thisYearSpending": "Dépenses cette année",
+      "thisMonthSpending": "Dépenses ce mois-ci",
+      "hardwareThisYear": "Matériel distribué cette année",
+      "comparedToLastYear": "par rapport à l'année dernière",
+      "comparedToLastMonth": "par rapport au mois dernier",
+      "counterLevels": "Niveaux de compteur",
+      "tonerLevels": "Niveaux de toner"
+    },
+    "error": {
+      "noToken": "Aucun jeton trouvé, veuillez vous connecter.",
+      "fetchCSV": "Erreur lors de la récupération du fichier CSV :",
+      "general": "Erreur"
+    },
+    "status": {
+      "loading": "Chargement",
+      "printerOffline": "L'imprimante sélectionnée est hors ligne"
+    },
+    "charts": {
+      "totalHardwareSoftware": "Dépenses totales pour matériel/logiciel",
+      "monthlySpending": "Dépenses mensuelles",
+      "departmentTotalSpending": "Dépenses totales par département",
+      "departmentHardwareGivenOut": "Matériel distribué par département",
+      "top20UsersWithMostHardware": "Top 20 des utilisateurs ayant reçu le plus de matériel"
+    },
+    "tonerLevels": {
+      "black": "Noir",
+      "cyan": "Cyan",
+      "magenta": "Magenta",
+      "yellow": "Jaune"
+    },
+    "labels": {
+      "selectYear": "Sélectionnez l'année",
+      "selectPrinter": "Sélectionnez une imprimante"
+    },
+    "categories": {
+      "hardware": "Matériel",
+      "software": "Logiciel"
+    },
+    "months": {
+      "january": "Janvier",
+      "february": "Février",
+      "march": "Mars",
+      "april": "Avril",
+      "may": "Mai",
+      "june": "Juin",
+      "july": "Juillet",
+      "august": "Août",
+      "september": "Septembre",
+      "october": "Octobre",
+      "november": "Novembre",
+      "december": "Décembre"
+    },
+    "totals": {
+      "hardwarePrice": "Prix total du matériel",
+      "softwarePrice": "Prix total du logiciel"
+    },
+    "table": {
+      "name": "Nom",
+      "ipAddress": "Adresse IP",
+      "printsBlackWhite": "Impressions en noir et blanc",
+      "printsColor": "Impressions en couleur",
+      "status": "Statut"
+    },
+    "settings": {
+      "title": "Paramètres"
+    }
+  }
+  

@@ -4,8 +4,10 @@ import { axisClasses, BarChart } from "@mui/x-charts";
 import { API_BASE_URL } from "../../security/config";
 import NormalCard from "../../components/dashboard/normalCrard";
 import { useTheme } from "../../context/themeContext";
+import { useTranslation } from "react-i18next"; // Import the useTranslation hook
 
 const GraphKrimsKrams = () => {
+  const { t } = useTranslation(); // Use the translation hook
   const [userHardwareSpending, setUserHardwareSpending] = useState<
     Record<string, number>
   >({});
@@ -18,7 +20,7 @@ const GraphKrimsKrams = () => {
     if (token) {
       setAuthToken(token);
     } else {
-      setError("No token found, please log in.");
+      setError(t("error.noToken")); // Set error message
       return;
     }
 
@@ -35,12 +37,11 @@ const GraphKrimsKrams = () => {
         );
 
         const parsedData = parseCSV(response.data);
-
         const userSpending = calculateUserHardwareSpending(parsedData);
         setUserHardwareSpending(userSpending);
       } catch (error: any) {
         setError(
-          `Error fetching CSV file: ${
+          `${t("error.fetchCSV")} ${
             error.response?.data?.message || error.message
           }`
         );
@@ -48,7 +49,7 @@ const GraphKrimsKrams = () => {
     };
 
     fetchCSVFile();
-  }, [authToken]);
+  }, [authToken, t]);
 
   const calculateUserHardwareSpending = (data: string[][]) => {
     const userSpending: Record<string, number> = {};
@@ -92,13 +93,17 @@ const GraphKrimsKrams = () => {
   const axisColor = theme === "light" ? "#000000" : "#ffffff";
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return (
+      <div>
+        {t("error.general")}: {error}
+      </div>
+    );
   }
 
   return (
     <div className="overflow-auto">
       <div className="w-full p-6">
-        <NormalCard title="Top 20 Benutzer mit den meisten ausgegebenen Kleingeräten">
+        <NormalCard title={t("charts.top20UsersWithMostHardware")}>
           <div>
             <BarChart
               borderRadius={10}

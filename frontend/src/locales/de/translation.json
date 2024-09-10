@@ -1,0 +1,71 @@
+{
+    "dashboard": {
+      "totalSpending": "Gesamtausgaben",
+      "thisYearSpending": "Ausgaben dieses Jahr",
+      "thisMonthSpending": "Ausgaben diesen Monat",
+      "hardwareThisYear": "Herausgegebene Hardware dieses Jahr",
+      "comparedToLastYear": "im Vergleich zum letzten Jahr",
+      "comparedToLastMonth": "im Vergleich zum letzten Monat",
+      "counterLevels": "Zählerstände",
+      "tonerLevels": "Tonerstände"
+    },
+    "error": {
+      "noToken": "Kein Token gefunden, bitte loggen Sie sich ein.",
+      "fetchCSV": "Fehler beim Abrufen der CSV-Datei:",
+      "general": "Fehler"
+    },
+    "status": {
+      "loading": "Laden",
+      "printerOffline": "Der ausgewählte Drucker ist offline"
+    },
+    "charts": {
+      "totalHardwareSoftware": "Gesamtausgaben für Hardware/Software",
+      "monthlySpending": "Monatliche Ausgaben",
+      "departmentTotalSpending": "Gesamtausgaben nach Abteilung",
+      "departmentHardwareGivenOut": "Herausgegebene Hardware nach Abteilung",
+      "top20UsersWithMostHardware": "Top 20 Benutzer mit den meisten ausgegebenen Geräten"
+    },
+    "tonerLevels": {
+      "black": "Schwarz",
+      "cyan": "Cyan",
+      "magenta": "Magenta",
+      "yellow": "Gelb"
+    },
+    "labels": {
+      "selectYear": "Jahr auswählen",
+      "selectPrinter": "Drucker auswählen"
+    },
+    "categories": {
+      "hardware": "Hardware",
+      "software": "Software"
+    },
+    "months": {
+      "january": "Januar",
+      "february": "Februar",
+      "march": "März",
+      "april": "April",
+      "may": "Mai",
+      "june": "Juni",
+      "july": "Juli",
+      "august": "August",
+      "september": "September",
+      "october": "Oktober",
+      "november": "November",
+      "december": "Dezember"
+    },
+    "totals": {
+      "hardwarePrice": "Gesamtpreis für Hardware",
+      "softwarePrice": "Gesamtpreis für Software"
+    },
+    "table": {
+      "name": "Name",
+      "ipAddress": "IP-Adresse",
+      "printsBlackWhite": "Schwarz-Weiß-Drucke",
+      "printsColor": "Farbdrucke",
+      "status": "Status"
+    },
+    "settings": {
+      "title": "Einstellungen"
+    }
+  }
+  

@@ -4,9 +4,12 @@ import { axisClasses, BarChart } from "@mui/x-charts";
 import { API_BASE_URL } from "../../security/config";
 import NormalCard from "../../components/dashboard/normalCrard";
 import { useTheme } from "../../context/themeContext";
+import { useTranslation } from "react-i18next"; // Import the useTranslation hook
 
 // Dashboard component for displaying financial data in charts
 const GraphBestand = () => {
+  const { t } = useTranslation(); // Use the `useTranslation` hook
+
   // State variables
   const [totalHardwarePrice, setTotalHardwarePrice] = useState<number>(0); // Total hardware price
   const [totalSoftwarePrice, setTotalSoftwarePrice] = useState<number>(0); // Total software price
@@ -25,18 +28,15 @@ const GraphBestand = () => {
   const [availableYears, setAvailableYears] = useState<number[]>([]); // Available years in the CSV data
   const { theme } = useTheme(); // Get the current theme from the ThemeProvider
 
-  // Effect hook to fetch CSV data on component mount or when selectedYear changes
   useEffect(() => {
-    // Get the authentication token from local storage
     const token = localStorage.getItem("token");
     if (token) {
       setAuthToken(token); // Set token in state
     } else {
-      setError("No token found, please log in."); // Set error if token not found
+      setError(t("error.noToken")); // Use translation for error message
       return;
     }
 
-    // Function to fetch the CSV file from the server
     const fetchCSVFile = async () => {
       try {
         const response = await axios.get(
@@ -59,7 +59,7 @@ const GraphBestand = () => {
         calculateMonthlySpending(parsedData, selectedYear); // Calculate monthly spending for the selected year
       } catch (error: any) {
         setError(
-          `Error fetching CSV file: ${
+          `${t("error.fetchCSV")} ${
             error.response?.data?.message || error.message
           }`
         );
@@ -67,17 +67,13 @@ const GraphBestand = () => {
     };
 
     fetchCSVFile(); // Call the function to fetch CSV data
-  }, [authToken, selectedYear]); // Re-run the effect if authToken or selectedYear changes
+  }, [authToken, selectedYear, t]); // Re-run the effect if authToken, selectedYear, or translation changes
 
-  // Black for light mode, white for dark mode
-
-  // Function to parse CSV data into a 2D array of strings
   const parseCSV = (text: string): string[][] => {
     const rows = text.split("\n").map((row) => row.split(";"));
     return rows;
   };
 
-  // Function to extract unique years from the CSV data
   const extractUniqueYears = (data: string[][]): number[] => {
     const years = new Set<number>();
 
@@ -94,7 +90,6 @@ const GraphBestand = () => {
     return Array.from(years).sort((a, b) => b - a); // Convert set to array and sort in descending order
   };
 
-  // Function to calculate total prices for hardware and software
   const calculateTotalPrices = (data: string[][]) => {
     let hardwareTotal = 0;
     let softwareTotal = 0;
@@ -116,9 +111,7 @@ const GraphBestand = () => {
     setTotalSoftwarePrice(softwareTotal); // Update state with total software price
   };
 
-  // Function to calculate spending by department
   const calculateDepartmentSpending = (data: string[][]) => {
-    // Initialize a record where each department will have a "totalSpending" and "itemCount"
     const spending: Record<
       string,
       { totalSpending: number; itemCount: number }
@@ -130,11 +123,9 @@ const GraphBestand = () => {
 
       if (!isNaN(price)) {
         if (!spending[department]) {
-          // Initialize department spending and item count if not already done
           spending[department] = { totalSpending: 0, itemCount: 0 };
         }
 
-        // Increment the total spending and item count for the department
         spending[department].totalSpending += price;
         spending[department].itemCount += 1;
       }
@@ -143,22 +134,18 @@ const GraphBestand = () => {
     setDepartmentSpending(spending); // Update state with department spending and item counts
   };
 
-  // Function to calculate monthly spending for a given year
   const calculateMonthlySpending = (data: string[][], year: number) => {
-    const monthlySpending = Array(12).fill(0); // Initialize monthly spending array
+    const monthlySpending = Array(12).fill(0);
 
     data.slice(1).forEach((row) => {
       const date = row[8]?.trim(); // Assuming "Antragsdatum" is in column index 1
       const price = parseFloat(row[4]?.replace(",", ".").trim()); // Assuming "Preis" is in column index 9
 
-      // Ensure both date and price are valid
       if (date && !isNaN(price)) {
         const [yearPart, monthPart] = date.split("-"); // Assuming "YYYY-MM-DD" format
         if (parseInt(yearPart, 10) === year) {
           const month = parseInt(monthPart, 10) - 1; // Convert month to 0-based index
           if (month >= 0 && month < 12) {
-            // Ensure valid month index
-
             monthlySpending[month] += price; // Add price to the corresponding month
           }
         }
@@ -170,7 +157,6 @@ const GraphBestand = () => {
 
   const departmentNames = Object.keys(departmentSpending); // Get department names from spending keys
 
-  // Effect hook to calculate chart width based on department spending
   useEffect(() => {
     const baseWidth = 350;
     const additionalWidth = 75;
@@ -178,22 +164,22 @@ const GraphBestand = () => {
     setWidth(newChartWidth); // Update chart width
   }, [departmentSpending]);
 
-  // Define colors based on the current theme
   const axisColor = theme === "light" ? "#000000" : "#ffffff";
 
-  // Get department totals (total spending) from spending values
   const departmentTotals = departmentNames.map(
     (department) => departmentSpending[department].totalSpending
   );
 
-  // Get department item counts from spending values
   const departmentItemCount = departmentNames.map(
     (department) => departmentSpending[department].itemCount
   );
 
-  // Render error message if there's an error
   if (error) {
-    return <div>Error: {error}</div>;
+    return (
+      <div>
+        {t("error.general")}: {error}
+      </div>
+    );
   }
 
   return (
@@ -201,14 +187,14 @@ const GraphBestand = () => {
       {/* Year Selection */}
       <div className="flex flex-wrap justify-start gap-5 p-4">
         <div className="p-2">
-          <NormalCard title="Gesamtausgaben für Hard/Software">
+          <NormalCard title={t("charts.totalHardwareSoftware")}>
             <div className="text-black dark:text-white">
               <BarChart
                 borderRadius={10}
                 xAxis={[
                   {
                     id: "barCategories",
-                    data: ["Hardware", "Software"],
+                    data: [t("categories.hardware"), t("categories.software")],
                     scaleType: "band",
                   },
                 ]}
@@ -233,15 +219,19 @@ const GraphBestand = () => {
                 })}
               />
 
-              <p>Total Hardware Price: {totalHardwarePrice.toFixed(2)} €</p>
-              <p>Total Software Price: {totalSoftwarePrice.toFixed(2)} €</p>
+              <p>
+                {t("totals.hardwarePrice")}: {totalHardwarePrice.toFixed(2)} €
+              </p>
+              <p>
+                {t("totals.softwarePrice")}: {totalSoftwarePrice.toFixed(2)} €
+              </p>
             </div>
           </NormalCard>
         </div>
         <div className="pl-6">
           <div className="pb-1">
             <label className="mr-2 text-black dark:text-white">
-              Select Year:{" "}
+              {t("labels.selectYear")}:
             </label>
             <select
               value={selectedYear}
@@ -255,7 +245,7 @@ const GraphBestand = () => {
               ))}
             </select>
           </div>
-          <NormalCard title="Monatliche Ausgaben">
+          <NormalCard title={t("charts.monthlySpending")}>
             <div>
               <BarChart
                 borderRadius={10}
@@ -263,18 +253,18 @@ const GraphBestand = () => {
                   {
                     id: "months",
                     data: [
-                      "Januar",
-                      "Februar",
-                      "März",
-                      "April",
-                      "Mai",
-                      "Juni",
-                      "Juli",
-                      "August",
-                      "September",
-                      "October",
-                      "November",
-                      "December",
+                      t("months.january"),
+                      t("months.february"),
+                      t("months.march"),
+                      t("months.april"),
+                      t("months.may"),
+                      t("months.june"),
+                      t("months.july"),
+                      t("months.august"),
+                      t("months.september"),
+                      t("months.october"),
+                      t("months.november"),
+                      t("months.december"),
                     ],
                     scaleType: "band",
                   },
@@ -306,7 +296,7 @@ const GraphBestand = () => {
       <div className="w-full p-6">
         <div className="flex flex-wrap items-center ">
           <div className="mr-10 mb-6">
-            <NormalCard title="Gesamtausgaben jeder Abteilungen">
+            <NormalCard title={t("charts.departmentTotalSpending")}>
               <div>
                 <BarChart
                   borderRadius={10}
@@ -341,7 +331,7 @@ const GraphBestand = () => {
             </NormalCard>
           </div>
           <div className="mr-10 mb-6">
-            <NormalCard title="Herausgegebene Hardware an Abteilungen">
+            <NormalCard title={t("charts.departmentHardwareGivenOut")}>
               <div>
                 <BarChart
                   borderRadius={10}
@@ -354,7 +344,7 @@ const GraphBestand = () => {
                   ]}
                   series={[
                     {
-                      id: "totalSpending",
+                      id: "itemCount",
                       data: departmentItemCount,
                     },
                   ]}

@@ -12,8 +12,10 @@ import {
 import OfflineBoltIcon from "@mui/icons-material/OfflineBolt";
 import { Typography } from "@mui/material";
 import { useTheme } from "../../context/themeContext";
+import { useTranslation } from "react-i18next"; // Import the useTranslation hook
 
 const Tonerlevels = () => {
+  const { t } = useTranslation(); // Use translation hook
   const [data, setData] = useState<any[]>([]);
   const [selectedPrinter, setSelectedPrinter] = useState<any | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -29,7 +31,7 @@ const Tonerlevels = () => {
     if (token) {
       setAuthToken(token);
     } else {
-      setError("No token found, please log in.");
+      setError(t("error.noToken")); // Set error message
       return;
     }
 
@@ -44,7 +46,7 @@ const Tonerlevels = () => {
         setSelectedPrinter(response.data[0]); // Set the first printer as the default
       } catch (error: any) {
         setError(
-          `Error fetching printer counts: ${
+          `${t("error.fetchTonerData")} ${
             error.response?.data?.message || error.message
           }`
         );
@@ -54,16 +56,20 @@ const Tonerlevels = () => {
     };
 
     fetchPrinterCounts();
-  }, [authToken]);
+  }, [authToken, t]);
 
   const axisColor = theme === "light" ? "#000000" : "#ffffff";
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return (
+      <div>
+        {t("error.general")}: {error}
+      </div>
+    );
   }
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div>{t("status.loading")}...</div>;
   }
 
   const handlePrinterChange = (event: SelectChangeEvent<string>) => {
@@ -97,22 +103,22 @@ const Tonerlevels = () => {
 
   const tonerData = [
     {
-      label: "Black",
+      label: t("tonerLevels.black"),
       value: selectedPrinter?.TonerLevels?.Black,
       color: "#0f0f0f",
     },
     {
-      label: "Cyan",
+      label: t("tonerLevels.cyan"),
       value: selectedPrinter?.TonerLevels?.Cyan,
       color: "#00FFFF",
     },
     {
-      label: "Magenta",
+      label: t("tonerLevels.magenta"),
       value: selectedPrinter?.TonerLevels?.Magenta,
       color: "#FF00FF",
     },
     {
-      label: "Yellow",
+      label: t("tonerLevels.yellow"),
       value: selectedPrinter?.TonerLevels?.Yellow,
       color: "#FFFF00",
     },
@@ -131,19 +137,19 @@ const Tonerlevels = () => {
           id="printerSelectLabel"
           sx={{ color: axisColor }} // Tailwind's gray-200 color code
         >
-          Select Printer
+          {t("labels.selectPrinter")}
         </InputLabel>
         <Select
           labelId="printerSelectLabel"
           id="printerSelect"
           value={selectedPrinter?.Name || ""}
           onChange={handlePrinterChange}
-          label="Select Printer"
+          label={t("labels.selectPrinter")}
           sx={{ color: axisColor }} // Apply gray-200
         >
           {data.map((device, index) => (
             <MenuItem key={index} value={device.Name}>
-              {device.Name}
+              {device.Name} {/* Do not change printer names */}
             </MenuItem>
           ))}
         </Select>
@@ -185,7 +191,7 @@ const Tonerlevels = () => {
           <div className="flex flex-col items-center">
             <OfflineBoltIcon style={{ fontSize: 100, color: "red" }} />
             <Typography variant="h6" color="error">
-              The selected printer is offline
+              {t("status.printerOffline")}
             </Typography>
           </div>
         )}

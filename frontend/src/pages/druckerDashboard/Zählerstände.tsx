@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { API_BASE_URL } from "../../security/config";
+import { useTranslation } from "react-i18next"; // Import the useTranslation hook
 
 // Dashboard component for displaying printer data in a table
 const Zaelerstaende = () => {
+  const { t } = useTranslation(); // Use translation hook
   const [data, setData] = useState<any[]>([]); // Store parsed JSON data
   const [error, setError] = useState<string | null>(null);
   const [authToken, setAuthToken] = useState<string | null>(null);
@@ -17,7 +19,7 @@ const Zaelerstaende = () => {
     if (token) {
       setAuthToken(token);
     } else {
-      setError("No token found, please log in.");
+      setError(t("error.noToken")); // Set error message using translation
       return;
     }
 
@@ -31,7 +33,7 @@ const Zaelerstaende = () => {
         setData(response.data);
       } catch (error: any) {
         setError(
-          `Error fetching printer counts: ${
+          `${t("error.fetchPrinterCounts")} ${
             error.response?.data?.message || error.message
           }`
         );
@@ -41,14 +43,18 @@ const Zaelerstaende = () => {
     };
 
     fetchPrinterCounts();
-  }, [authToken]);
+  }, [authToken, t]);
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return (
+      <div>
+        {t("error.general")}: {error}
+      </div>
+    );
   }
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div>{t("status.loading")}...</div>;
   }
 
   return (
@@ -57,19 +63,19 @@ const Zaelerstaende = () => {
         <thead>
           <tr>
             <th className="px-4 py-2 border bg-gray-300 text-black dark:text-gray-100 dark:bg-gray-700">
-              Name
+              {t("table.name")}
             </th>
             <th className="px-4 py-2 border bg-gray-300 text-black dark:text-gray-100 dark:bg-gray-700">
-              IP Address
+              {t("table.ipAddress")}
             </th>
             <th className="px-4 py-2 border bg-gray-300 text-black dark:text-gray-100 dark:bg-gray-700">
-              Prints Black & White
+              {t("table.printsBlackWhite")}
             </th>
             <th className="px-4 py-2 border bg-gray-300 text-black dark:text-gray-100 dark:bg-gray-700">
-              Prints Color
+              {t("table.printsColor")}
             </th>
             <th className="px-4 py-2 border bg-gray-300 text-black dark:text-gray-100 dark:bg-gray-700">
-              Status
+              {t("table.status")}
             </th>
           </tr>
         </thead>

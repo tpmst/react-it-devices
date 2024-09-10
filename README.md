@@ -117,11 +117,11 @@ npm run start
 The frontend will be accessible at http://localhost:5173.
 
 ## Application Looks
-### Dashboard(german)
+### Dashboard(german in dark-mode)
 ![image](https://github.com/user-attachments/assets/cd7cb62f-1fbb-44cf-9103-70089a4ccfac)
 
-### Dashboard(english)
-![image](https://github.com/user-attachments/assets/4c449026-db18-4c97-97ae-5cc39edf4112)
+### Dashboard(english in light-mode)
+![image](https://github.com/user-attachments/assets/f6a2dc12-cf2d-47d4-988c-f6c23b592ebd)
 
 ### Buying
 ![image](https://github.com/user-attachments/assets/ae59528c-9e0b-4933-9510-aeeef8734049)

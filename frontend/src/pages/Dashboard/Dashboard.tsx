@@ -193,7 +193,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="p-6 bg-[#f5f4eb] dark:bg-[#11151a]">
+    <div className="p-6 bg-[#f5f4eb] dark:bg-[#1c242c]">
       <Grid container spacing={4}>
         <Grid item xs={12} md={6} lg={3}>
           <DashboardCard

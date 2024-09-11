@@ -21,7 +21,7 @@ This project is a web application designed to manage and track IT procurement pr
   - [Generating and Downloading PDFs](#generating-and-downloading-pdfs)
   - [Languages](#language)
 - [API Documentation](#api-documentation)
-- [Adding a Printer](#add-printer)
+- [Adding a Printer](#adding-a-printer)
 - [Troubleshooting](#troubleshooting)
 - [Contributing](#contributing)
 - [License](#license)

@@ -9,9 +9,16 @@ import CSVViewEinkauf from "../Einkauf/CSVViewEinkauf";
 import SettingsLayout from "../Settings/SettingsLayout";
 import { SettingsProvider } from "../../security/SettingsContex";
 import ThemeSelector from "../../context/themeSelector";
+import { useTranslation } from "react-i18next";
 
 const HomePage: React.FC = () => {
   const [site, setSite] = useState("dashboard");
+  const { i18n } = useTranslation();
+
+  const changeLanguage = (language: string) => {
+    i18n.changeLanguage(language);
+    localStorage.setItem("i18nextLng", language); // Persist the selection
+  };
 
   useEffect(() => {});
 
@@ -24,6 +31,28 @@ const HomePage: React.FC = () => {
         <div className="ml-auto">
           {" "}
           <ThemeSelector />
+        </div>
+        <div>
+          <button
+            onClick={() => changeLanguage("en")}
+            className={`p-2 ${
+              i18n.language === "en"
+                ? "bg-[#dddcd2] dark:bg-[#1a2129] dark:text-gray-200"
+                : "bg-[#eceadb] dark:bg-[#1e293b] dark:text-gray-200"
+            }`}
+          >
+            en
+          </button>
+          <button
+            onClick={() => changeLanguage("de")}
+            className={`p-2 ${
+              i18n.language === "de"
+                ? "bg-[#dddcd2] dark:bg-[#1a2129] dark:text-gray-200"
+                : "bg-[#eceadb] dark:bg-[#1e293b] dark:text-gray-200"
+            }`}
+          >
+            de
+          </button>
         </div>
       </header>
 
@@ -39,7 +68,7 @@ const HomePage: React.FC = () => {
         </main>
       </SettingsProvider>
       <footer className="bg-[#eceadb] dark:bg-[#1e293b] w-full p-4 dark:text-white text-center">
-        © 2024 tpmst. All rights reserved.
+        © 2024 Certmedica. All rights reserved.
       </footer>
     </div>
   );

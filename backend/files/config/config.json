@@ -1,7 +1,7 @@
 {
   "orderedBy": [
-    "Name 1",
-    "Name 2"
+    "N. Pischel",
+    "T. Stiefel"
   ],
   "betriebsmittel": [
     "Notebook",
@@ -28,5 +28,70 @@
     "Neu",
     "In Ordnung",
     "beschädigt"
+  ],
+  "standardHardware": [
+    {
+      "item": "Lenovo ThinkVision P27q-10-69 cm (27 Zoll)",
+      "links": [
+        {
+          "text": "Amazon",
+          "url": "https://www.laptop-markt.de/Lenovo-ThinkVision-P27H-10-27-Zoll-Monitor-2560x1440-WQHD-IPS-USB-C-DisplayPort_1"
+        }
+      ]
+    },
+    {
+      "item": "Acer CB272 Monitor 27 Zoll",
+      "links": [
+        {
+          "text": "Amazon",
+          "url": "https://www.amazon.de/Acer-CB272bmiprx-ZeroFrame-1920x1080-H%C3%B6henverstellbar/dp/B07VN7T857"
+        }
+      ]
+    },
+    {
+      "item": "Sennheiser PC 3.2 CHAT",
+      "links": [
+        {
+          "text": "Amazon",
+          "url": "https://www.amazon.de/Sennheiser-Noise-Cancelling-Mikrofon-entspanntes-minimalistisches-Klappmikrofon/dp/B07VS3SK3K/ref=sr_1_3?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1Z59O3T9YIE8N&dib=eyJ2IjoiMSJ9.g-9M_ScuP8fgl0WY5pL4zBbGZwCNffWSSX6WORvbLx_DhVWmvsCzZTorlLUrT3p5dNYJukaWWXY-bvoCwdyp8N-Dp2lVlmmHYJ5CvZ4TxSEp7Vj_CXMD7HJxPczn7FanCS7poxIKndrF5rgh3PLaYgWmQpzkxX453r22Z-9Fh63JO5pTlv3vkdy6r-Tm-NKZgvoCFzIySe4q2mlXW6KIOwZjGxYoF6sv9zT0FjXyuNQ.JZdfyGYxXwUwg6cMWaXqnNfFhpNxVmRgkTiPt7a1x6c&dib_tag=se&keywords=sennheiser+pc+5.2&qid=1726464921&sprefix=senheiser+pc+5.%2Caps%2C331&sr=8-3"
+        }
+      ]
+    },
+    {
+      "item": "CHERRY Stream Keyboard TKL",
+      "links": [
+        {
+          "text": "Amazon",
+          "url": "https://www.amazon.de/CHERRY-STREAM-KEYBOARD-schwarz-deutsches/dp/B07Y425Y2H/ref=sr_1_5?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1DBTCMPEF6VSR&keywords=cherry%2Btastatur%2Bflache%2Btasten&qid=1687260084&sprefix=cherry%2Btastatur%2Bflache%2Btasten%2Caps%2C89&sr=8-5"
+        }
+      ]
+    },
+    {
+      "item": "Cerry Maus Kabelgebunden",
+      "links": [
+        {
+          "text": "Amazon",
+          "url": "https://www.amazon.de/CHERRY-GENTIX-Corded-Optical-Schwarz/dp/B0039TIYBQ/ref=sr_1_4?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=EKY6RVNLYTSH&keywords=CHERRY+maus&qid=1686906608&sprefix=cherry+maus%2Caps%2C87&sr=8-4"
+        }
+      ]
+    },
+    {
+      "item": "Logitech C270 Webcam",
+      "links": [
+        {
+          "text": "Amazon",
+          "url": "https://www.amazon.de/Logitech-Belichtungskorrektur-USB-Anschluss-Rauschunterdr%C3%BCckung-Universalhalterung/dp/B01BGBJ8Y0/ref=sr_1_3?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=AUEV584N0V6Q&dib=eyJ2IjoiMSJ9.w5Uq-B2fERlQwc0mivYMXIkN642Rqy9s3WokRx5KyXv-aU3ia9maQJ3OZgaEKSL9Y-ZuKEl-g3zAWxJS2JEtkNo_QzdbIf9QPwGx7W-eniIOwiNroRbyZGRcOopCnZr_eweoyR1yZi_HOJGmqrGapnoHx54P5wb7TGHblYkBBiLu2pd7AOr0rYHFs8LZJ45aRWVHJJ2xTj2aCaYsHuSsK2kMcELMGIXQc_XIQ51vv7M.CYdPTu4QPSBDkaQNvz06l9wuGXulAPbd7zFrDGaVoGk&dib_tag=se&keywords=Logitech+C270+Webcam&qid=1726465667&sprefix=logitech+c270+webcam%2Caps%2C505&sr=8-3"
+        }
+      ]
+    },
+    {
+      "item": "Amazon Basics- kompakte Laptoptasche",
+      "links": [
+        {
+          "text": "Amazon",
+          "url": "https://www.amazon.de/Amazon-Laptoptasche-Umh%C3%A4ngetasche-Tragetasche-Aufbewahrung/dp/B00DUGZFWY/ref=sr_1_7_ffob_sspa?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3VVSWVJMB00A4&dib=eyJ2IjoiMSJ9.71AhJ-X2X-rr9RtLPA8HhFJzilZV2J3tY_8CPqvdBVC_4jsxI0HftOBfkjgCfaUHDw5qZL0uSE7279xptBvbvzHFSMjXQNF8IiaAeWAaqgLAfEwJ2Wfab7g9W6LtsPjSpo04ymvLqa_5BCpAL9Ot40EYw4M4SwyXehf1LuYFY2N6_HSww0NxBfAudb73_wOBJve1wc8KqeugMiTITE6SAwzQjCJwYQqQ55JVjDKG3Uo.ZuEGZMhmkk9ewb30Rrr8KHEoOSmic1fV1N-iisRCVL4&dib_tag=se&keywords=amazon+basics+notebooktasche&qid=1725435128&sprefix=amazon+basics+notebooktasche%2Caps%2C97&sr=8-7-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9tdGY&psc=1"
+        }
+      ]
+    }
   ]
 }

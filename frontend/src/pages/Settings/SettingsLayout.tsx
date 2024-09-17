@@ -2,8 +2,8 @@ import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
 import SelectSettings from "./SelectSettings";
-import LanguageSelect from "./LanguageSelect";
 import { useTranslation } from "react-i18next"; // Import the useTranslation hook
+import StandardHardware from "./StandardHardware";
 
 // Dashboard component for displaying settings
 const SettingsLayout = () => {
@@ -19,7 +19,7 @@ const SettingsLayout = () => {
           <SelectSettings />
         </ListItem>
         <ListItem>
-          <LanguageSelect />
+          <StandardHardware />
         </ListItem>
       </List>
       <Divider />

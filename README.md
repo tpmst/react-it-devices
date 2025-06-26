@@ -22,7 +22,6 @@ This project is a web application designed to manage and track IT procurement pr
   - [Viewing and Editing CSV Data](#viewing-and-editing-csv-data)
   - [Generating and Downloading PDFs](#generating-and-downloading-pdfs)
   - [Languages](#language)
-- [API Documentation](#api-documentation)
 - [Adding a Printer](#adding-a-printer)
 - [Troubleshooting](#troubleshooting)
 - [Contributing](#contributing)
@@ -165,8 +164,17 @@ The frontend will be accessible at http://localhost:5173.
 ### Buying
 ![image](https://github.com/user-attachments/assets/6e305f27-159b-4690-b4f1-9bdebde45a47)
 
+### Licenses
+![image](https://github.com/user-attachments/assets/f35210a8-969f-456d-91e3-a90336a170a4)
+
 ### IT-Purchases
 ![image](https://github.com/user-attachments/assets/f5acd252-9e82-4f93-9a8f-95bf9ebae0a8)
+
+### Requests - Admin
+![image](https://github.com/user-attachments/assets/c2650aa4-9b72-4605-b494-823b76e2abc0)
+
+### Requests - User
+![image](https://github.com/user-attachments/assets/b3d16cd0-d070-4cfc-8a3c-8b600798c2ff)
 
 ### Printers
 ![image](https://github.com/user-attachments/assets/db0f2f3b-783e-4f90-a2da-1216e2ea598e)
@@ -192,30 +200,57 @@ The frontend will be accessible at http://localhost:5173.
   - **Purchases**: Procurement-related CSVs
   - **IT Supplies**: Tracking IT inventory
 
-### 3. **Printer Dashboard**
-- Monitor printers in real-time
-- View printer status and usage stats
+### 3. **License Management**
+- Licenses
+  - Tracking Licenses
+- Assigment
+  - Shows who the License is assigned to aswell on which device it is installed
 
-### 4. **Phone Management**
+### 4. **Requests**
+- Users can make hardware or software requests, so it can be ordered by IT
+- Users can monitor status of the order
+
+### 5. **Printer Dashboard**
+- Monitor Printers
+  - Monitor printers in real-time
+  - View printer status and usage stats
+- Printer Contracts
+  - Check and view Contracts for Printers
+  - View defaultinformations like (Serial Number, Purchase Option ...)
+
+### 6. **Phone Management**
 - Manage CSV files containing phone-related data
 - Edit and organize user/device information
 
-### 5. **User Permissions**
+### 7. **User Permissions**
 - Dynamic routes and views based on user groups
 - Permissions retrieved from backend
 - Restricted access with appropriate error feedback
 
-### 6. **Multilingual Support**
+### 8. **Multilingual Support**
 - Fully translated in **English** and **German**
 - Users can switch languages via header buttons
 
-### 7. **Secure Logout**
+### 9. **Secure Logout**
 - Logout button with secure session clearing
 - Designed with accessibility and UX in mind
 
-### 8. **Settings Panel**
+### 10. **Settings Panel**
 - Admin panel for managing global settings
 - Easily configure application behavior
+
+### 11. **API Tokens**
+![image](https://github.com/user-attachments/assets/68fe629a-c383-47fa-8272-74496c5ec76c)
+![image](https://github.com/user-attachments/assets/0e9b3dab-73dd-4408-92d2-f8b60eae8e2f)
+
+- added API capabilites so the date can be exported and used by other software e.g ERP
+- Tokens can be created and blacklisted by the user
+- each token is linked to the user and will be shown in the API Logs
+- Tokens expiere after 365 days
+- /api/export-csv/:filename
+  - allows to download the csv files in the foler /csv
+  - user needs to be in the admin group
+
 
 ## Technologies Used
 
@@ -252,15 +287,6 @@ Download the generated PDFs from the "PDF Files" section.
 
 ### Language
 There is a locals folder where you can take the en/translation.json and translate it into your Language. But in some cases the Language is depending on the CSV-Files you have in your backend, so you maby need to change some parts of the code for example in the EditModals for the tabels.
-
-## API Documentation
-The API provides endpoints for managing PDFs, CSV files, and user authentication.
-
-### Endpoints
-```bash
-For Endpoints look into backend/routes
-```
-For detailed documentation, refer to the API source code comments.
 
 ## Adding a Printer
 For adding a Printer take a look into my two reposetorys for kyocera printer:
